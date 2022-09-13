@@ -7,12 +7,12 @@ a {
   color: #00B7FF;
 }
 
-.sign-up-container {
+.form-container {
   display: flex;
   justify-content: center;
   align-content: center;
 }
 
-.sign-up {
+.form {
   display: grid;
 }

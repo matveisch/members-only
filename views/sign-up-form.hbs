@@ -1,5 +1,5 @@
-<div class="sign-up-container">
-    <form action="" method="POST" class="sign-up">
+<div class="form-container">
+    <form action="" method="POST" class="form">
         <label for="firstName">First name:</label>
         <input type="text" id="firstName" name="firstName" value={{user.firstName}}>
         <label for="secondName">Second name:</label>
@@ -13,7 +13,7 @@
         <button type="submit">Sign Up</button>
     </form>
 </div>
-<ul class="people_list">
+<ul>
     {{#each errors}}
         <li>{{this.msg}}</li>
     {{/each}}

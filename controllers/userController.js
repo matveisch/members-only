@@ -1,8 +1,21 @@
-const async = require('async');
 const { body, validationResult, check} = require("express-validator");
+
+const passport = require('passport');
 const bcrypt = require('bcryptjs');
 
 const User = require('../models/User');
+
+exports.user_get = (req, res, next) => {
+    res.render('sign-in-form');
+};
+
+exports.user_post = (req, res, next) => {
+    console.log(req.url);
+    passport.authenticate('local', {
+        successRedirect: "/",
+        failureRedirect: "/sign-in"
+    })(req, res, next);
+};
 
 exports.user_create_get = (req, res, next) => {
     res.render('sign-up-form');
