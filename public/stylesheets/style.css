@@ -6,3 +6,13 @@ body {
 a {
   color: #00B7FF;
 }
+
+.sign-up-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.sign-up {
+  display: grid;
+}
