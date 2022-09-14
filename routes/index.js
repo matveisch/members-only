@@ -9,6 +9,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express', user: req.user });
 });
 
+router.get('/logout', userController.user_logout);
+
 router.get('/sign-in', userController.user_get);
 router.post('/sign-in', userController.user_post);
 

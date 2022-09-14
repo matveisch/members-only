@@ -16,10 +16,11 @@ a {
   display: flex;
   align-items: center;
   gap: 15px;
-}
-.user .logout-img {
-  width: 15px;
-  height: 15px;
+
+  .logout-img {
+    width: 15px;
+    height: 15px;
+  }
 }
 
 .button {
@@ -35,25 +36,27 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-header .title {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-}
-header ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
+
+  .title {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
 }
 
 .form-container {
   display: flex;
   justify-content: center;
   align-content: center;
-}
-.form-container .form {
-  display: grid;
+
+  .form {
+    display: grid;
+  }
 }
 
-/*# sourceMappingURL=style.css.map */

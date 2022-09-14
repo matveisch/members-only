@@ -10,12 +10,21 @@ exports.user_get = (req, res, next) => {
 };
 
 exports.user_post = (req, res, next) => {
-    console.log(req.url);
     passport.authenticate('local', {
         successRedirect: "/",
-        failureRedirect: "/sign-in"
+        failureRedirect: "/sign-up"
     })(req, res, next);
 };
+
+exports.user_logout = (req, res, next) => {
+    req.logout(function (err) {
+        if (err) {
+            return next(err);
+        }
+
+        res.redirect("/");
+    });
+}
 
 exports.user_create_get = (req, res, next) => {
     res.render('sign-up-form');

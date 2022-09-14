@@ -5,6 +5,27 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    {{{body}}}
+      <header>
+          <div class="title">
+              <a href="/"><h1>Members Only</h1></a>
+              {{#if user}}
+                <a href="" class="button">Create post</a>
+              {{/if}}
+          </div>
+          {{#if user}}
+              <div class="user">
+                  <h2>{{user.fullName}}</h2>
+                  <a href="/logout"><img src="logout.png" alt="logout" class="logout-img"></a>
+              </div>
+          {{else}}
+              <nav>
+                  <ul>
+                      <li><a href="/sign-in">Sign In</a></li>
+                      <li><a href="/sign-up">Sign Up</a></li>
+                  </ul>
+              </nav>
+          {{/if}}
+      </header>
+      {{{body}}}
   </body>
 </html>
