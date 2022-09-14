@@ -1,0 +1,14 @@
+<div class="user-details">
+    <div class="title">
+        <h1>User details</h1>
+        {{#unless user.membershipStatus}}
+            <a href="{{user.url}}/membership" class="button">Become a club member</a>
+        {{/unless}}
+    </div>
+    <h2>{{user.fullName}} –
+        {{#if user.membershipStatus}}
+            {{user.membershipStatus}}
+        {{/if}}
+    </h2>
+    <h3>{{user.email}}</h3>
+</div>

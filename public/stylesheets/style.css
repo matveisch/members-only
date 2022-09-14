@@ -5,6 +5,7 @@
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 5px;
 }
 
 a {
@@ -35,6 +36,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 0 15px 0;
 }
 header .title {
   display: flex;
@@ -54,6 +56,13 @@ header ul {
 }
 .form-container .form {
   display: grid;
+}
+
+.user-details .title {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

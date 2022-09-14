@@ -14,8 +14,8 @@
           </div>
           {{#if user}}
               <div class="user">
-                  <h2>{{user.fullName}}</h2>
-                  <a href="/logout"><img src="logout.png" alt="logout" class="logout-img"></a>
+                  <a href={{user.url}}><h2>{{user.fullName}}</h2></a>
+                  <a href="/logout"><img src="../images/logout.png" alt="logout" class="logout-img"></a>
               </div>
           {{else}}
               <nav>

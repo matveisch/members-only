@@ -3,11 +3,13 @@ var router = express.Router();
 
 const userController = require('../controllers/userController');
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-  console.log(req.user);
   res.render('index', { title: 'Express', user: req.user });
 });
+
+router.get('/user/:id', userController.user_details);
+router.get('/user/:id/membership', userController.user_membership_get);
+router.post('/user/:id/membership', userController.user_membership_post);
 
 router.get('/logout', userController.user_logout);
 
