@@ -1,5 +1,4 @@
 const { body, validationResult, check} = require("express-validator");
-
 const passport = require('passport');
 const bcrypt = require('bcryptjs');
 
@@ -8,21 +7,18 @@ const User = require('../models/User');
 exports.user_details = (req, res, next) => {
     User.findById(req.params.id).exec((err, user) => {
         if (err) return next(err);
+
         if (user === null) {
             const err = new Error('User not found');
             err.status = 404;
             return next(err);
         }
 
-        res.render('user-details', {
-            user
-        })
+        res.render('user-details', { user });
     })
 };
 
-exports.user_membership_get = (req, res, next) => {
-    res.render('club-form');
-}
+exports.user_membership_get = (req, res, next) => {res.render('club-form')};
 
 exports.user_membership_post = (req, res, next) => {
     if (req.body.password === 'becomeamember') {
@@ -36,9 +32,7 @@ exports.user_membership_post = (req, res, next) => {
     }
 }
 
-exports.user_get = (req, res, next) => {
-    res.render('sign-in-form');
-};
+exports.user_get = (req, res, next) => {res.render('sign-in-form')};
 
 exports.user_post = (req, res, next) => {
     passport.authenticate('local', {
@@ -57,9 +51,7 @@ exports.user_logout = (req, res, next) => {
     });
 }
 
-exports.user_create_get = (req, res, next) => {
-    res.render('sign-up-form');
-};
+exports.user_create_get = (req, res, next) => {res.render('sign-up-form')};
 
 exports.user_create_post = [
     body("firstName", "First name must not be empty.")

@@ -4,7 +4,7 @@ var router = express.Router();
 const userController = require('../controllers/userController');
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express', user: req.user });
+  res.render('index', { user: req.user });
 });
 
 router.get('/user/:id', userController.user_details);
