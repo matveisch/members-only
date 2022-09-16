@@ -2,10 +2,14 @@ var express = require('express');
 var router = express.Router();
 
 const userController = require('../controllers/userController');
+const messageController = require('../controllers/messageController');
 
 router.get('/', function(req, res, next) {
   res.render('index', { user: req.user });
 });
+
+router.get('/message/create', messageController.message_create_get);
+router.post('/message/create', messageController.message_create_post);
 
 router.get('/user/:id', userController.user_details);
 router.get('/user/:id/membership', userController.user_membership_get);

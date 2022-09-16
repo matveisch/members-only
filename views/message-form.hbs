@@ -1,0 +1,14 @@
+<div class="form-container">
+    <form action="" method="POST" class="form">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" value={{message.title}}>
+        <label for="text">Text:</label>
+        <input type="text" id="text" name="text" value={{message.text}}>
+        <button type="submit">Post</button>
+    </form>
+</div>
+<ul>
+    {{#each errors}}
+        <li>{{this.msg}}</li>
+    {{/each}}
+</ul>

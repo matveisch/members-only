@@ -1,7 +1,6 @@
 const { body, validationResult, check} = require("express-validator");
 const passport = require('passport');
 const bcrypt = require('bcryptjs');
-
 const User = require('../models/User');
 
 exports.user_details = (req, res, next) => {
@@ -24,7 +23,6 @@ exports.user_membership_post = (req, res, next) => {
     if (req.body.password === 'becomeamember') {
         User.findByIdAndUpdate(req.params.id, {membershipStatus: 'member'}, {}, (err, user) => {
             if (err) return next(err);
-            console.log(user);
             res.redirect(user.url);
         });
     } else {
