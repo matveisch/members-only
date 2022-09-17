@@ -1,0 +1,10 @@
+div.form-container
+    form(action='' method='post').form
+        label(for='title') Title:
+        input(type="text" id="title" name="title" value=message.title)
+        label(for='text') Text:
+        input(type="text" id="text" name="text" value=message.text)
+        button(type='submit') Post
+ul
+    each error in errors
+        li=error.msg

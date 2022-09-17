@@ -10,4 +10,19 @@ html(lang='en')
             div.title
                 a(href='/')
                     h1 Members Only
-        block content
+                if user
+                    a(href='/message/create').button Create post
+            if user
+                div.user
+                    a(href=user.url)
+                        h2= user.fullName
+                    a(href='/logout')
+                        img(src='../images/logout.png' alt='logout').logout-img
+            else
+                nav
+                    ul
+                        li
+                            a(href='/sign-in') Sign In
+                            a(href='/sign-up') Sign Up
+        main
+            block content
