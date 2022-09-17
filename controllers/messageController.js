@@ -49,5 +49,13 @@ exports.message_create_post = [
 ]
 
 exports.messages_list = (req, res, next) => {
+    console.log(req.user);
 
+    Message.find({})
+        .populate('author')
+        .exec((err, messages) => {
+        if (err) return next(err);
+
+        res.render('index', {messages, user: req.user});
+    })
 };

@@ -8,7 +8,7 @@
     </form>
 </div>
 <ul>
-    {{#each errors}}
-        <li>{{this.msg}}</li>
-    {{/each}}
+    <% errors.forEach(error => { %>
+        <li><%= error.msg%></li>
+    <% }); %>
 </ul>

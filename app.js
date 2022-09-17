@@ -27,7 +27,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+app.set('view engine', 'pug');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -70,6 +70,11 @@ passport.deserializeUser(function(id, done) {
   User.findById(id, function(err, user) {
     done(err, user);
   });
+});
+
+app.use(function(req, res, next) {
+  res.locals.user = req.user;
+  next();
 });
 
 app.use('/', indexRouter);

@@ -1,0 +1,12 @@
+<div class="messages-container">
+    <% messages.forEach(message => { %>
+        <div class="message">
+            <h1><%= message.title %></h1>
+            <% if (user) { %>
+            <h2><%=message.author.fullName %></h2>
+            <h2><%= message.timeStamp %></h2>
+            <% } %>
+            <p><%= message.text %></p>
+        </div>
+    <% }); %>
+</div>

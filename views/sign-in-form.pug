@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    div.form-container
+        form(action='/sign-in' method='post').form
+            label(for='email') Email:
+            input(type='email' id='email' name='email')
+            label(for='password') Password:
+            input(type="password" id="password" name="password")
+            button(type='submit') Sign In

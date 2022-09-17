@@ -4,9 +4,7 @@ var router = express.Router();
 const userController = require('../controllers/userController');
 const messageController = require('../controllers/messageController');
 
-router.get('/', function(req, res, next) {
-  res.render('index', { user: req.user });
-});
+router.get('/', messageController.messages_list);
 
 router.get('/message/create', messageController.message_create_get);
 router.post('/message/create', messageController.message_create_post);

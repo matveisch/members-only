@@ -12,7 +12,7 @@ const MessageSchema = new Schema(
 );
 
 MessageSchema.virtual('url').get(function() {
-    return `/messages/message/${this._id}`;
+    return `/message/${this._id}`;
 });
 
 module.exports = mongoose.model('Message', MessageSchema);

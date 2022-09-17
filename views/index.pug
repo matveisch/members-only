@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    div.messages-container
+        each message in messages
+            div.message
+                h1= message.title
+                if user
+                    h2= message.author.fullName
+                    h2= message.timeStamp
+                p= message.text
