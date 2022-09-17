@@ -61,11 +61,19 @@ header ul {
   flex-direction: column;
   padding: 5px;
 }
-.messages-container .message :first-child {
+.messages-container .message h1 {
   margin-bottom: 10px;
 }
-.messages-container .message :nth-child(2) {
+.messages-container .message h3 {
   margin-bottom: 20px;
+}
+.messages-container .message .message-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.messages-container .message .delete-img {
+  width: 20px;
 }
 
 .form-container {

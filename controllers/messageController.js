@@ -66,6 +66,14 @@ exports.message_delete_get = (req, res, next) => {
 
             res.render('message-delete', {messages, id: req.params.id});
         })
+};
+
+exports.message_delete_post = (req, res, next) => {
+    Message.findByIdAndRemove(req.params.id, err => {
+        if (err) return next(err);
+
+        res.redirect('/');
+    })
 }
 
 exports.messages_list = (req, res, next) => {

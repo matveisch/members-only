@@ -64,12 +64,22 @@ header {
     flex-direction: column;
     padding: 5px;
 
-    :first-child {
+    h1 {
       margin-bottom: 10px;
     }
 
-    :nth-child(2) {
+    h3 {
       margin-bottom: 20px;
+    }
+
+    .message-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .delete-img {
+      width: 20px;
     }
   }
 }

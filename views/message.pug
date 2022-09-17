@@ -5,8 +5,12 @@ block message
         each message in messages
             div.message
                 if (message.id !== id)
-                    h1= message.title
-                    a(href=`${message.url}/delete`) Delete
+                    div.message-title
+                        h1= message.title
+                        if (user)
+                            if user.admin
+                                a(href=`${message.url}/delete`)
+                                    img(src='/images/delete.png' alt='delete').delete-img
                     if user
                         h3= `${message.author.fullName} – ${message.timeStampFormatted}`
                     p= message.text

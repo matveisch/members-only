@@ -75,6 +75,7 @@ exports.user_create_post = [
                 return;
             } else {
                 user.password = hashedPassword;
+                user.admin = false;
 
                 user.save(err => {
                     if (err) return next(err);
