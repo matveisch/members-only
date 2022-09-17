@@ -1,0 +1,14 @@
+extends index
+
+block message
+    div.messages-container
+        each message in messages
+            div.message
+                if (message.id !== id)
+                    h1= message.title
+                    a(href=`${message.url}/delete`) Delete
+                    if user
+                        h3= `${message.author.fullName} – ${message.timeStampFormatted}`
+                    p= message.text
+                else
+                    block delete

@@ -1,10 +1,4 @@
 extends layout
 
 block content
-    div.messages-container
-        each message in messages
-            div.message
-                h1= message.title
-                if user
-                    h3= `${message.author.fullName} – ${message.timeStampFormatted}`
-                p= message.text
+    block message

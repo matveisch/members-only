@@ -9,6 +9,8 @@ router.get('/', messageController.messages_list);
 router.get('/message/create', messageController.message_create_get);
 router.post('/message/create', messageController.message_create_post);
 
+router.get('/message/:id/delete', messageController.message_delete_get);
+
 router.get('/user/:id/membership', userController.user_membership_get);
 router.post('/user/:id/membership', userController.user_membership_post);
 

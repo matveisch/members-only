@@ -56,16 +56,24 @@ exports.message_create_post = [
             }
         })
     }
-]
+];
+
+exports.message_delete_get = (req, res, next) => {
+    Message.find({})
+        .populate('author')
+        .exec((err, messages) => {
+            if (err) return next(err);
+
+            res.render('message-delete', {messages, id: req.params.id});
+        })
+}
 
 exports.messages_list = (req, res, next) => {
-    console.log(req.user);
-
     Message.find({})
         .populate('author')
         .exec((err, messages) => {
         if (err) return next(err);
 
-        res.render('index', {messages, user: req.user});
+        res.render('message', {messages, user: req.user, id: req.params.id});
     })
 };
