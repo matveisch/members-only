@@ -49,6 +49,24 @@ header ul {
   gap: 20px;
 }
 
+.messages-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+.messages-container .message {
+  border: 1px solid;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.messages-container .message :first-child {
+  margin-bottom: 10px;
+}
+.messages-container .message :nth-child(2) {
+  margin-bottom: 20px;
+}
+
 .form-container {
   display: flex;
   justify-content: center;

@@ -6,6 +6,5 @@ block content
             div.message
                 h1= message.title
                 if user
-                    h2= message.author.fullName
-                    h2= message.timeStamp
+                    h3= `${message.author.fullName} – ${message.timeStampFormatted}`
                 p= message.text

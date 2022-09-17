@@ -52,6 +52,27 @@ header {
   }
 }
 
+.messages-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+
+  .message {
+    border: 1px solid;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+
+    :first-child {
+      margin-bottom: 10px;
+    }
+
+    :nth-child(2) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
 .form-container {
   display: flex;
   justify-content: center;

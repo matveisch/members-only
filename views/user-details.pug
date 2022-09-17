@@ -1,0 +1,7 @@
+div.user-details
+    div.title
+        h1 User details
+        if !user.membershipStatus
+            a(href=`${user.url}/membership`).button Become a club member
+        h2= `${user.fullName} – ${user.membershipStatus}`
+        h3= user.email
