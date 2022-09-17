@@ -59,6 +59,7 @@ header ul {
   border-radius: 8px;
   display: flex;
   flex-direction: column;
+  padding: 5px;
 }
 .messages-container .message :first-child {
   margin-bottom: 10px;

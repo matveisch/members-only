@@ -14,8 +14,7 @@ html(lang='en')
                     a(href='/message/create').button Create post
             if user
                 div.user
-                    a(href=user.url)
-                        h2= user.fullName
+                    h2= user.fullName
                     a(href='/logout')
                         img(src='../images/logout.png' alt='logout').logout-img
             else

@@ -2,7 +2,17 @@ const { body,validationResult } = require("express-validator");
 const Message = require('../models/Message');
 const User = require('../models/User');
 
-exports.message_create_get = (req, res, next) => {res.render('message-form')};
+exports.message_create_get = (req, res, next) => {
+    if (req.user) {
+        if (req.user.membershipStatus === 'member') {
+            res.render('message-form');
+        } else {
+            res.redirect('/');
+        }
+    } else {
+        res.redirect('/');
+    }
+};
 
 exports.message_create_post = [
     body('title', 'Title must not be empty')
@@ -41,7 +51,7 @@ exports.message_create_post = [
                 message.save(err => {
                     if (err) return next(err);
 
-                    res.redirect(message.url);
+                    res.redirect('/');
                 })
             }
         })

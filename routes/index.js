@@ -9,7 +9,6 @@ router.get('/', messageController.messages_list);
 router.get('/message/create', messageController.message_create_get);
 router.post('/message/create', messageController.message_create_post);
 
-router.get('/user/:id', userController.user_details);
 router.get('/user/:id/membership', userController.user_membership_get);
 router.post('/user/:id/membership', userController.user_membership_post);
 

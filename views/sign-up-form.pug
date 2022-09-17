@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    div.form-container
+        form(method='post').form
+            label(for="firstName") First name:
+            input(type="text" id="firstName" name="firstName" value=(user ? user.firstName : ''))
+            label(for="secondName") Second name:
+            input(type="text" id="secondName" name="secondName" value=(user ? user.secondName : ''))
+            label(for="email") Email:
+            input(type="text" id="email" name="email" value=(user ? user.email : ''))
+            label(for="password") Password:
+            input(type="text" id="password" name="password")
+            label(for="confirmPassword") Confirm password:
+            input(type="text" id="confirmPassword" name="confirmPassword")
+            button(type='submit') Sign Up
+
+    ul
+        if errors
+            each error in errors
+                li=error.msg
+
